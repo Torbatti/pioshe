@@ -1,0 +1,53 @@
+*,
+*::after,
+*::before {
+  box-sizing:   border-box;
+  margin:       0;
+  padding:      0;
+  font:         inherit;
+}
+*{
+  padding:0;
+  margin:0;
+  border: 0;
+  box-sizing:border-box;
+	font-size: 100%;
+	font: inherit;
+  vertical-align:baseline;
+}
+
+img,
+picture {
+  width: 100%;
+  max-width: 100%;
+  display: block;
+}
+
+.rtl{direction:rtl !important;}
+.ltr{direction:ltr !important;}
+
+/*
+Remove the default font size and weight for headings.
+*/
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  /* TWCSS */
+  font-weight: inherit;
+  /* TWCSS */
+  overflow-wrap: break-word;
+  /* ? */
+}
+
+/* TWCSS
+Reset links to optimize for opt-in styling instead of opt-out.
+*/
+a {
+  color: inherit;
+  text-decoration: inherit;
+}

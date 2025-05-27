@@ -1,0 +1,30 @@
+:root {
+    --background: #f0f0f0;
+    --text: #111111;
+    --primary: #45c0ad;
+    --secondary: #cbcab1;
+    --accent: #a5b18b;
+
+    --c1: #FFFFFF;
+    --c2: #111111;
+    --c4: #7c68b3;
+    --c5: #f9a39f;
+
+    --b1: #f0f0f0;
+    --b2: #e2e2e2;
+    --b3: #535353;
+    --b4: #333333;
+}
+
+@font-face {
+    font-family: 'Vazirmatn';
+    src: url('fonts/Vazirmatn[wght].woff2') format('woff2 supports variations'),
+        url('fonts/Vazirmatn[wght].woff2') format('woff2-variations');
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: Vazirmatn, sans-serif;
+}

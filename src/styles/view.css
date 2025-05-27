@@ -1,0 +1,29 @@
+#view{
+    width:100vw;
+    width:100dvw;
+
+    height:100vh;
+    height:100dvh;
+
+    color:var(--text);
+    background:var(--background);
+
+    font-family:Vazirmatn,sans-serif;
+}
+
+#view{
+    display:grid;
+    grid-template-columns:48px 1fr;
+}
+
+/* Pioshe is not supported on deviced with less than 280px width */
+@media screen and (max-width: 280px) {
+    #view{display:none !important;}
+    #view *{display:none !important;}
+}
+
+@media screen and (max-width: 539px) {}
+@media screen and (min-width: 540px) {}
+
+@media screen and (max-width: 539px) {}
+@media screen and (min-width: 540px) {}
