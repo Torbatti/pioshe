@@ -7,13 +7,6 @@
 
     color:var(--text);
     background:var(--background);
-
-    font-family:Vazirmatn,sans-serif;
-}
-
-#view{
-    display:grid;
-    grid-template-columns:48px 1fr;
 }
 
 /* Pioshe is not supported on deviced with less than 280px width */
@@ -22,8 +15,142 @@
     #view *{display:none !important;}
 }
 
-@media screen and (max-width: 539px) {}
-@media screen and (min-width: 540px) {}
 
-@media screen and (max-width: 539px) {}
-@media screen and (min-width: 540px) {}
+/*  */
+
+
+@media screen and (min-width: 280px) and (max-width: 720px) {
+    #v-bala-pooste{background:var(--background);border-bottom:1px solid var(--text);}
+    #v-chap-pooste{background:var(--background);border-right:1px solid var(--text);}
+    #v-mian-pooste{background:var(--background);}
+    #v-rast-pooste{background:var(--background);}
+}
+@media screen and (min-width: 720px){
+    #v-bala-pooste{background:var(--background);border-bottom:1px solid var(--text);}
+    #v-chap-pooste{background:var(--background);border-right:1px solid var(--text);}
+    #v-mian-pooste{background:var(--background);border-right:1px solid var(--text);}
+    #v-rast-pooste{background:var(--background);}
+}
+
+/*
+#v-bala-pooste{background:red;}
+#v-chap-pooste{background:green;}
+#v-mian-pooste{background:blue;}
+#v-rast-pooste{background:yellow;} 
+*/
+
+
+/*  */
+
+
+@media screen and (min-width: 280px) and (max-width: 720px) {
+    #view{
+        --vbp-width:calc(100dvw - var(--vcp-width));
+        --vbp-height:calc(3rem);
+        
+        --vcp-width:calc(4rem);
+        --vcp-height:calc(100dvh);
+
+        --vmp-width:calc(100dvw - var(--vcp-width));
+        --vmp-height:calc(100dvh - var(--vbp-height));
+
+        --vrp-width:calc(100dvw - var(--vcp-width) - var(--vmp-width));
+        --vrp-height:calc(100dvh - var(--vbp-height));
+    }
+}
+@media screen and (min-width: 720px){
+    #view{
+        --vbp-width:calc(100dvw - var(--vcp-width));
+        --vbp-height:calc(2rem);
+        
+        --vcp-width:calc(4rem);
+        --vcp-height:calc(100dvh);
+
+        --vmp-width:calc(15rem);
+        --vmp-height:calc(100dvh - var(--vbp-height));
+
+        --vrp-width:calc(100dvw - var(--vcp-width) - var(--vmp-width));
+        --vrp-height:calc(100dvh - var(--vbp-height));
+    }
+}
+@media screen and (min-width: 1280px){
+    #view{
+        --vmp-width:calc(20rem);
+    }
+}
+
+
+/*  */
+
+@media screen and (min-width: 280px) and (max-width: 720px) {
+    #view{
+        display:grid;
+        grid-template-columns:var(--vcp-width) calc(100dvw - var(--vcp-width));
+        grid-template-rows:var(--vbp-height) calc(100dvh - var(--vbp-height));
+    }
+
+    #v-chap-pooste{        
+        grid-row:span 2;
+
+        width:var(--vcp-width);
+        height:var(--vcp-height);
+    }
+    #v-bala-pooste{
+
+        width:var(--vbp-width);
+        height:var(--vbp-height);
+    }
+    #v-mian-pooste{
+        width:var(--vmp-width);
+        height:var(--vmp-height);
+    }
+    #v-rast-pooste{
+        display:none;
+        width:var(--vrp-width);
+        height:var(--vrp-height);
+    }
+}
+
+/* @media screen and (min-width: 480px) and (max-width: 720px) { */
+@media screen and (min-width: 720px){
+    #view{
+        display:grid;
+        grid-template-columns:var(--vcp-width) var(--vmp-width) var(--vrp-width);
+        /* grid-template-columns:var(--vcp-width) 1fr 1fr; */
+        grid-template-rows:var(--vbp-height) var(--vrp-height);
+    }
+
+    #v-chap-pooste{
+        grid-row:span 2;
+        
+        width:var(--vcp-width);
+        height:var(--vcp-height);
+    }
+    #v-bala-pooste{
+        grid-column:span 2;
+
+        width:var(--vbp-width);
+        height:var(--vbp-height);
+    }
+    #v-mian-pooste{
+        width:var(--vmp-width);
+        height:var(--vmp-height);
+    }
+    #v-rast-pooste{
+        width:var(--vrp-width);
+        height:var(--vrp-height);
+    }
+}
+
+
+
+/* 
+#v-chap-pooste{}
+#v-chap-haste{}
+#v-bala-pooste{}
+#v-bala-haste{}
+#v-mian-pooste{}
+#v-mian-haste{}
+#v-rast-pooste{}
+#v-rast-haste{}
+*/
