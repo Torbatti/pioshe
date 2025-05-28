@@ -26,30 +26,36 @@
     #view-bar{border-right:1px solid var(--text);}
     #view-top{border-bottom:1px solid var(--text);}
     #view-main{}
+    #view-main-left{border-right:1px solid var(--text);}
 }
 
-/* 
-#view-bar{background:red;}
+
+/* #view-bar{background:red;}
 #view-top{background:green;}
 #view-main{background:blue;} 
-*/
+#view-main-left{background:yellow;} 
+#view-main-right{background:purple;} 
+#view-main-page{background:teal;}  */
 
 @media screen and (min-width: 280px) and (max-width: 720px) {
     #view{
         --vt-width:calc(100dvw - var(--vb-width));
-        --vt-height:calc(3rem);
+        --vt-height:calc(2.5rem);
         
-        --vb-width:calc(4rem);
+        --vb-width:calc(3.5rem);
         --vb-height:calc(100dvh);
 
         --vm-width:calc(100dvw - var(--vb-width));
         --vm-height:calc(100dvh - var(--vt-height));
 
-        --vml-width:calc(100dvw - var(--vb-width));
-        --vml-height:calc(100dvh - var(--vt-height));
+        --vml-width:var(--vm-width);
+        --vml-height:var(--vm-height);
 
-        --vmr-width:calc(100dvw - var(--vb-width));
-        --vmr-height:calc(100dvh - var(--vt-height));
+        --vmr-width:var(--vm-width);
+        --vmr-height:var(--vm-height);
+
+        --vmp-width:var(--vm-width);
+        --vmp-height:var(--vm-height);
     }
 }
 @media screen and (min-width: 720px){
@@ -68,11 +74,14 @@
 
         --vmr-width:calc(var(--vm-width) - var(--vml-width));
         --vmr-height:var(--vm-height);
+
+        --vmp-width:var(--vm-width);
+        --vmp-height:var(--vm-height);
     }
 }
 @media screen and (min-width: 1280px){
     #view{
-
+        --vml-width:20rem;
     }
 }
 
@@ -97,5 +106,28 @@
         width:var(--vm-width);
         height:var(--vm-height);
     }
+    #view-main-left{
+        width:var(--vml-width);
+        height:var(--vml-height);
+    }
+    #view-main-right{
+        width:var(--vmr-width);
+        height:var(--vmr-height);
+    }
+    #view-main-page{
+        width:var(--vmp-width);
+        height:var(--vmp-height);
+    }
+}
+
+@media screen and (min-width: 720px){
+    #view-main{
+        display:grid;
+        grid-template-columns:var(--vml-width) var(--vmr-width);
+        grid-template-rows:var(--vm-height);
+    }
+    #view-main-left{}
+    #view-main-right{}
+    #view-main-page{}
 }
 
